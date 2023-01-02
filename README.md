@@ -12,6 +12,9 @@ on [http://localhost:8000](http://localhost:8000).
 
 In the client directory, you can run:
 
+### `npm install`
+To install node modules
+
 ### `npm start`
 
 Runs the app in the development mode.\
