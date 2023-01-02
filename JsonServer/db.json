@@ -2,16 +2,12 @@
   "categories": [
     {
       "id": "80877",
-      "name": "Appetizers"
+      "name": "Appetizers",
+      "description": "aaaaa"
     },
     {
       "id": "21281",
       "name": "Salads"
-    },
-    {
-      "name": "a",
-      "description": "aa",
-      "id": "0kEVRUW"
     }
   ],
   "items": [
@@ -91,20 +87,6 @@
       "description": "Rocket leaves, fresh mushrooms, Parmesan cheese, Balsamic dressing",
       "price": "34.839",
       "categoryId": "80877"
-    },
-    {
-      "name": "asd",
-      "description": "asd",
-      "price": "12.4",
-      "categoryId": "80877",
-      "id": 655885
-    },
-    {
-      "name": "d",
-      "description": "d",
-      "price": null,
-      "categoryId": "0kEVRUW",
-      "id": 655886
     }
   ]
 }

@@ -21,7 +21,7 @@ const CategoryItemForm = ({ categoryId }: { categoryId: string }) => {
     defaultValues: {
       name: '',
       description: '',
-      price: null
+      price: ''
     }
   });
   const submitCategory = (formdata: CategoryItemFormValues) => {
