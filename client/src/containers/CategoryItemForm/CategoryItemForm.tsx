@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { Divider, Form, Header, Item, Segment } from 'semantic-ui-react';
+import { Divider, Form, Header, Item, Message, Segment } from 'semantic-ui-react';
 import { useCreateCategoryItemMutation } from '../../redux/apis/categories';
 import locals from '../../locals/en.json';
 import { CategoryItemFormValues } from './CategoryItemForm.types';
@@ -10,13 +10,13 @@ const CategoryItemForm = ({ categoryId }: { categoryId: string }) => {
   const formValidation = {
     name: { required: true },
     description: { required: true },
-    price: { min: 0 }
+    price: { required: true, min: 0 }
   };
   const {
     control,
     handleSubmit,
     reset,
-    formState: { errors }
+    formState: { isValid }
   } = useForm<CategoryItemFormValues>({
     defaultValues: {
       name: '',
@@ -25,8 +25,6 @@ const CategoryItemForm = ({ categoryId }: { categoryId: string }) => {
     }
   });
   const submitCategory = (formdata: CategoryItemFormValues) => {
-    console.log(errors, formdata);
-
     createCategoryItem({ categoryId: categoryId, categoryItemData: formdata });
   };
   useEffect(() => {
@@ -58,7 +56,14 @@ const CategoryItemForm = ({ categoryId }: { categoryId: string }) => {
               rules={formValidation.price}
               control={control}
               render={({ field }) => (
-                <Form.Input fluid label="Price" {...field} placeholder="Price" />
+                <Form.Input
+                  fluid
+                  label="Price"
+                  {...field}
+                  type="number"
+                  {...formValidation.price}
+                  placeholder="Price"
+                />
               )}
             />
           </Form.Group>
@@ -78,7 +83,9 @@ const CategoryItemForm = ({ categoryId }: { categoryId: string }) => {
             )}
           />
           <Divider />
-          <Form.Button>Save</Form.Button>
+          <Form.Button color="teal" disabled={!isValid}>
+            Save
+          </Form.Button>
         </Form>
       </Segment>
     </Item>

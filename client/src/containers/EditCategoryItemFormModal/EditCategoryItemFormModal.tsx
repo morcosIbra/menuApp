@@ -12,7 +12,11 @@ const EditCategoryItemFormModal = ({
   isOpen
 }: EditCategoryItemFormModalProps) => {
   const [updateCategoryItem, { isSuccess }] = useUpdateCategoryItemMutation();
-  const { control, handleSubmit } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { isValid }
+  } = useForm({
     defaultValues: {
       name: categoryItem.name,
       description: categoryItem.description,
@@ -60,6 +64,7 @@ const EditCategoryItemFormModal = ({
               fluid
               {...formValidation.price}
               label="Price"
+              type="number"
               {...field}
               placeholder="Price"
             />
@@ -82,7 +87,7 @@ const EditCategoryItemFormModal = ({
       </Modal.Content>
       <Modal.Actions>
         <Button color="red" icon="times" content="Close" onClick={closeHandle} />
-        <Button type="submit" color="green" icon="save" content="Save" />
+        <Button type="submit" color="teal" icon="save" content="Save" disabled={!isValid} />
       </Modal.Actions>
     </Modal>
   );

@@ -12,7 +12,11 @@ const EditCategoryFormModal = ({
   closeHandle
 }: EditCategoryFormModalProps) => {
   const [updateCategory, { isSuccess }] = useUpdateCategoryMutation();
-  const { control, handleSubmit } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { isValid }
+  } = useForm({
     defaultValues: {
       name: categoryData.name,
       description: categoryData.description
@@ -30,7 +34,6 @@ const EditCategoryFormModal = ({
 
   useEffect(() => {
     if (isSuccess) closeHandle();
-    console.log('aaai', isSuccess);
   }, [closeHandle, isSuccess]);
 
   return (
@@ -73,7 +76,7 @@ const EditCategoryFormModal = ({
       </Modal.Content>
       <Modal.Actions>
         <Button color="red" icon="times" content="Close" onClick={closeHandle} />
-        <Button type="submit" icon="save" content="Save" />
+        <Button type="submit" icon="save" color="teal" content="Save" disabled={!isValid} />
       </Modal.Actions>
     </Modal>
   );

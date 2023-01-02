@@ -7,7 +7,12 @@ import locals from '../../locals/en.json';
 
 const CategoryForm = () => {
   const [createCategory, { isLoading }] = useCreateCategoryMutation();
-  const { control, handleSubmit, reset } = useForm({
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { isValid }
+  } = useForm({
     defaultValues: {
       name: '',
       description: ''
@@ -61,7 +66,9 @@ const CategoryForm = () => {
           />
 
           <Divider />
-          <Form.Button type="submit">{locals.save}</Form.Button>
+          <Form.Button type="submit" color="teal" disabled={!isValid}>
+            {locals.save}
+          </Form.Button>
         </Form>
       </Segment>
     </Item>
