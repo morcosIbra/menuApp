@@ -1,6 +1,5 @@
-# Getting Started with Create React App
+# Getting Started with Menu App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -12,6 +11,9 @@ Runs the server in the development mode.\
 on [http://localhost:8000](http://localhost:8000).
 
 In the client directory, you can run:
+
+### `npm install`
+To install node modules
 
 ### `npm start`
 
