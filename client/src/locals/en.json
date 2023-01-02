@@ -1,0 +1,13 @@
+{
+  "addcategory": "Add Category",
+  "menuData": "Menu Data",
+  "name": "Name",
+  "description": "Description",
+  "price": "Price",
+  "notFound": "No Data Available",
+  "save": "save",
+  "egp": "EGP",
+  "welcome": "welcome",
+  "editCategory": "Edit category",
+  "editCategoryItem": "Edit category item"
+}
