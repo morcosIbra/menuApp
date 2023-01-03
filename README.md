@@ -5,7 +5,7 @@
 
 In the JsonServer directory, you can run:
 
-### `json-server db.json --watch --routes routes.json --port 8000`
+### `npx json-server db.json --watch --routes routes.json --port 8000`
 
 Runs the server in the development mode.\
 on [http://localhost:8000](http://localhost:8000).
