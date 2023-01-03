@@ -5,9 +5,6 @@
 
 In the JsonServer directory, you can run:
 
-### `npm install`
-To install node modules
-
 ### `npx json-server db.json --watch --routes routes.json --port 8000`
 
 Runs the server in the development mode.\
