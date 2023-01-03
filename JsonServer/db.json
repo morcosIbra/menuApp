@@ -1,6 +1,10 @@
 {
   "categories": [
     {
+      "id": "-1",
+      "description":"plz don't remove it for technical issue"
+    },
+    {
       "id": "80877",
       "name": "Appetizers"
     },
